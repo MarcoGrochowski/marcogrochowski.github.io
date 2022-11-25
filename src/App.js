@@ -4,10 +4,12 @@ import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 
 import NavigationBar from "./NavigationBar";
+import Home from './Home.js';
+import Container from "@mui/material/Container";
 
 function App() {
   return (
-      <div className="App">
+      <Container>
           <NavigationBar/>
           <Routes>
               <Route path={"/"} element={<Home />} />
@@ -15,14 +17,8 @@ function App() {
               <Route path={"/contact"} element={<Contact />} />
               <Route path="*" element={<NoMatch />} />
           </Routes>
-      </div>
+      </Container>
   );
-}
-
-function Home() {
-    return (
-        <h1>Home</h1>
-    );
 }
 
 function Blog() {
