@@ -35,7 +35,13 @@ export default function Home() {
                 spacing={2}
                 alignItems={"center"}
                 justifyContent={"center"}>
-                <Grid item xs={12}>
+                <Grid item xs={12}
+                      style={{
+                          justifyContent: "center",
+                          alignItems: "center",
+                          display: "flex",
+                          flexDirection: "column" }}
+                >
                     <Avatar sx={{width: 64, height: 64}}>MG</Avatar>
                     <Typography>Hello, world!</Typography>
                 </Grid>

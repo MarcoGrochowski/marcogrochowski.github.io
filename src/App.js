@@ -6,10 +6,17 @@ import { Routes, Route, Link } from 'react-router-dom';
 import NavigationBar from "./NavigationBar";
 import Home from './Home.js';
 import Container from "@mui/material/Container";
+import styled from '@emotion/styled'
+import {AppBar} from "@mui/material";
+
+const StyledContainer = styled(Container)`
+  background: #eceff1;
+  height: 100vh;
+`
 
 function App() {
   return (
-      <Container>
+      <StyledContainer maxWidth={"xl"}>
           <NavigationBar/>
           <Routes>
               <Route path={"/"} element={<Home />} />
@@ -17,7 +24,7 @@ function App() {
               <Route path={"/contact"} element={<Contact />} />
               <Route path="*" element={<NoMatch />} />
           </Routes>
-      </Container>
+      </StyledContainer>
   );
 }
 
