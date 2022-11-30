@@ -7,24 +7,37 @@ import NavigationBar from "./NavigationBar";
 import Home from './Home.js';
 import Container from "@mui/material/Container";
 import styled from '@emotion/styled'
-import {AppBar} from "@mui/material";
+import { CssBaseline } from "@mui/material";
 
-const StyledContainer = styled(Container)`
+const RootContainer = styled(Container)`
   background: #eceff1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   height: 100vh;
+`
+
+const ContentContainer = styled.div`
+  background: blue;
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 96px);
+  justify-content: flex-start;
 `
 
 function App() {
   return (
-      <StyledContainer maxWidth={"xl"}>
+      <RootContainer>
           <NavigationBar/>
-          <Routes>
-              <Route path={"/"} element={<Home />} />
-              <Route path={"/blog"} element={<Blog />} />
-              <Route path={"/contact"} element={<Contact />} />
-              <Route path="*" element={<NoMatch />} />
-          </Routes>
-      </StyledContainer>
+          <ContentContainer>
+              <Routes>
+                  <Route path={"/"} element={<Home />} />
+                  <Route path={"/blog"} element={<Blog />} />
+                  <Route path={"/contact"} element={<Contact />} />
+                  <Route path="*" element={<NoMatch />} />
+              </Routes>
+          </ContentContainer>
+      </RootContainer>
   );
 }
 

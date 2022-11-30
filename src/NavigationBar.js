@@ -6,13 +6,21 @@ import Container from '@mui/material/Container';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Divider from '@mui/material/Divider';
 
 import styled from '@emotion/styled'
 import { Link, matchPath, useLocation } from "react-router-dom";
 
 const StyledAppBar = styled(AppBar)`
   background: #eceff1;
-  margin: 0px;
+  height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  color: black;
+  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
 `
 
 const theme = createTheme({
@@ -61,7 +69,7 @@ function NavigationBar() {
 
     return (
         <ThemeProvider theme={theme}>
-            <StyledAppBar position={"fixed"}>
+            <StyledAppBar>
                 <Container maxWidth={"xl"}>
                     <Toolbar disableGutters>
                         <Tabs value={currentTab}>
@@ -72,7 +80,6 @@ function NavigationBar() {
                     </Toolbar>
                 </Container>
             </StyledAppBar>
-            <Toolbar />
         </ThemeProvider>
     );
 }
